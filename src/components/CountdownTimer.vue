@@ -32,22 +32,22 @@ setInterval(updateCountdown, 1000);
 </script>
 
 <template>
-  <div class="flex justify-center items-center space-x-4 text-white font-poppins">
-    <div class="text-center">
-      <p class="text-3xl font-bold">{{ days }}</p>
-      <p class="text-sm">Jours</p>
+  <div class="flex flex-col lg:flex-row justify-center items-center lg:space-x-8 space-y-4 lg:space-y-0 text-white font-poppins">
+    <div class="flex items-center">
+      <p class="text-4xl lg:text-5xl font-bold">{{ days }}</p>
+      <span class="ml-2 text-lg lg:text-lg font-normal">Jours</span>
     </div>
-    <div class="text-center">
-      <p class="text-3xl font-bold">{{ hours }}</p>
-      <p class="text-sm">Heures</p>
+    <div class="flex items-center">
+      <p class="text-4xl lg:text-5xl font-bold">{{ hours }}</p>
+      <span class="ml-2 text-lg lg:text-lg font-normal">Heures</span>
     </div>
-    <div class="text-center">
-      <p class="text-3xl font-bold">{{ minutes }}</p>
-      <p class="text-sm">Minutes</p>
+    <div class="flex items-center">
+      <p class="text-4xl lg:text-5xl font-bold">{{ minutes }}</p>
+      <span class="ml-2 text-lg lg:text-lg font-normal">Minutes</span>
     </div>
-    <div class="text-center">
-      <p class="text-3xl font-bold">{{ seconds }}</p>
-      <p class="text-sm">Secondes</p>
+    <div class="flex items-center">
+      <p class="text-4xl lg:text-5xl font-bold">{{ seconds }}</p>
+      <span class="ml-2 text-lg lg:text-lg font-normal">Secondes</span>
     </div>
   </div>
 </template>
