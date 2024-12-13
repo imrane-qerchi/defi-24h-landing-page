@@ -1,14 +1,15 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
-import { ref } from 'vue';
-import CountdownTimer from '@/components/CountdownTimer.vue';
+import { ref } from 'vue'
+import CountdownTimer from '@/components/CountdownTimer.vue'
 
-const email = ref('');
+const email = ref('')
 
 const handleSubmit = () => {
   // Placeholder for handling the email submission
-  alert(`Merci ! Votre email (${email.value}) a été enregistré.`);
-  email.value = '';
-};
+  alert(`Merci ! Votre email (${email.value}) a été enregistré.`)
+  email.value = ''
+}
 </script>
 
 <template>
@@ -19,13 +20,18 @@ const handleSubmit = () => {
     </div>
 
     <!-- Right Side: Content -->
-    <div class="lg:w-1/2 w-full flex flex-col justify-center items-center text-center text-white p-4">
+    <div
+      class="lg:w-1/2 w-full flex flex-col justify-center items-center text-center text-white p-4"
+    >
       <h1 class="text-5xl lg:text-7xl font-bold mb-4">Coming Soon!</h1>
       <h2 class="text-3xl lg:text-6xl font-bold mb-8">17-18 Janvier</h2>
 
       <CountdownTimer />
 
-      <form class="mt-8 flex flex-col lg:flex-row items-center lg:space-x-4 space-y-4 lg:space-y-0" @submit.prevent="handleSubmit">
+      <form
+        class="mt-8 flex flex-col lg:flex-row items-center lg:space-x-4 space-y-4 lg:space-y-0"
+        @submit.prevent="handleSubmit"
+      >
         <input
           type="email"
           v-model="email"
