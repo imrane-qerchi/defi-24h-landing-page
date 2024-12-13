@@ -1,0 +1,2 @@
+/api/*  https://defi-24h-mmi.pockethost.io/api/:splat  200
+/*  / 200
