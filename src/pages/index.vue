@@ -1,15 +1,23 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
-import { ref } from 'vue'
-import CountdownTimer from '@/components/CountdownTimer.vue'
+import { ref } from 'vue';
+import CountdownTimer from '@/components/CountdownTimer.vue';
+import PocketBase from 'pocketbase';
 
-const email = ref('')
+const pb = new PocketBase('https://defi-24h-mmi.pockethost.io/'); // Utilisation de l'instance correcte
+const email = ref('');
 
-const handleSubmit = () => {
-  // Placeholder for handling the email submission
-  alert(`Merci ! Votre email (${email.value}) a été enregistré.`)
-  email.value = ''
-}
+const handleSubmit = async () => {
+  try {
+    // Enregistrement de l'email dans PocketBase
+    await pb.collection('subscribers').create({ email: email.value });
+    alert('Merci ! Votre email a été enregistré.');
+    email.value = '';
+  } catch (error) {
+    console.error("Erreur lors de l'enregistrement :", error);
+    alert("Une erreur s'est produite. Veuillez réessayer.");
+  }
+};
 </script>
 
 <template>
@@ -28,10 +36,7 @@ const handleSubmit = () => {
 
       <CountdownTimer />
 
-      <form
-        class="mt-8 flex flex-col lg:flex-row items-center lg:space-x-4 space-y-4 lg:space-y-0"
-        @submit.prevent="handleSubmit"
-      >
+      <form class="mt-8 flex items-center space-x-4" @submit.prevent="handleSubmit">
         <input
           type="email"
           v-model="email"
