@@ -35,8 +35,8 @@ const handleSubmit = async () => {
     </div>
 
     <!-- Right Side: Form -->
-    <div class="lg:absolute bottom-10 right-10 w-full max-w-md mb-10">
-      <p class="mb-4 text-lg text-center lg:text-left">
+    <div class="lg:absolute bottom-10 right-10 w-full max-w-md mb-10 px-4">
+      <p class="mb-4 text-base text-center lg:text-left">
         Être notifié à l'ouverture des inscriptions
       </p>
       <form
@@ -52,7 +52,7 @@ const handleSubmit = async () => {
         />
         <button
           type="submit"
-          class="bg-black text-white px-6 py-2 rounded-r-xl hover:bg-gray-800 transition"
+          class="bg-black text-white px-6 py-2 rounded-r-xl hover:bg-gray-800 transition flex justify-center items-center whitespace-nowrap"
         >
           S'abonner
         </button>
