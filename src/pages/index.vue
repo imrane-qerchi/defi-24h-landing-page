@@ -4,14 +4,13 @@ import { ref } from 'vue'
 import CountdownTimer from '@/components/CountdownTimer.vue'
 import PocketBase from 'pocketbase'
 
-const pb = new PocketBase('https://defi-24h-mmi.pockethost.io/') // Utilisation de l'instance correcte
+const pb = new PocketBase('https://defi-24h-mmi.pockethost.io/')
 const email = ref('')
 
 const handleSubmit = async () => {
   try {
-    // Enregistrement de l'email dans PocketBase
     await pb.collection('subscribers').create({ email: email.value })
-    alert('Merci ! Votre email a été enregistré.')
+    alert("Merci ! Vous serez informé à l'ouverture des inscriptions.")
     email.value = ''
   } catch (error) {
     console.error("Erreur lors de l'enregistrement :", error)
@@ -21,37 +20,41 @@ const handleSubmit = async () => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-primary-blue flex flex-col lg:flex-row">
-    <!-- Left Side: Logo -->
-    <div class="lg:w-1/2 w-full flex justify-center items-center p-4">
-      <img src="/logo-defi24h.svg" alt="Défi 24H" class="w-3/4 lg:w-1/2" />
+  <div
+    class="min-h-screen bg-primary-blue text-white font-poppins flex flex-col lg:flex-row items-center relative"
+  >
+    <!-- Left Side: Text and Countdown -->
+    <div class="flex-1 lg:pl-20 flex flex-col items-start">
+      <img src="/logo-defi24h.svg" alt="Défi 24H" class="w-40 lg:w-56 mb-8 self-center" />
+      <CountdownTimer />
+      <div class="mt-12 mb-8">
+        <h1 class="text-3xl lg:text-5xl font-bold text-primary-yellow">We are</h1>
+        <h2 class="text-4xl lg:text-6xl font-bold text-primary-yellow">Coming Soon.</h2>
+        <p class="text-xl lg:text-2xl font-bold mt-4">17 Janvier 2025</p>
+      </div>
     </div>
 
-    <!-- Right Side: Content -->
-    <div
-      class="lg:w-1/2 w-full flex flex-col justify-center items-center text-center text-white p-4"
-    >
-      <h1 class="text-5xl lg:text-7xl font-bold mb-4">Coming Soon!</h1>
-      <h2 class="text-3xl lg:text-6xl font-bold mb-8">17-18 Janvier</h2>
-
-      <CountdownTimer />
-
+    <!-- Right Side: Form -->
+    <div class="lg:absolute bottom-10 right-10 w-full max-w-md mb-10">
+      <p class="mb-4 text-lg text-center lg:text-left">
+        Être notifié à l'ouverture des inscriptions
+      </p>
       <form
-        class="mt-8 flex flex-col lg:flex-row items-center lg:space-x-4 space-y-4 lg:space-y-0"
+        class="flex items-center border border-gray-300 rounded-full overflow-hidden"
         @submit.prevent="handleSubmit"
       >
         <input
           type="email"
           v-model="email"
-          placeholder="Entrez votre email"
-          class="border border-gray-300 rounded-md px-4 py-2 text-black w-72"
+          placeholder="Email"
+          class="flex-1 px-4 py-2 text-black border-none focus:outline-none"
           required
         />
         <button
           type="submit"
-          class="bg-primary-yellow text-black font-normal rounded-md px-4 py-2 hover:bg-yellow-500 transition"
+          class="bg-black text-white px-6 py-2 rounded-r-xl hover:bg-gray-800 transition"
         >
-          Informez-moi
+          S'abonner
         </button>
       </form>
     </div>
