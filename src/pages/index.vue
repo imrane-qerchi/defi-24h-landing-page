@@ -47,12 +47,12 @@ const handleSubmit = async () => {
           type="email"
           v-model="email"
           placeholder="Email"
-          class="flex-1 px-4 py-2 text-black border-none focus:outline-none"
+          class="w-3/4 px-4 py-2 text-black border-none focus:outline-none"
           required
         />
         <button
           type="submit"
-          class="bg-black text-white px-6 py-2 rounded-r-xl hover:bg-gray-800 transition flex justify-center items-center whitespace-nowrap"
+          class="w-1/4 bg-black text-white px-4 py-2 rounded-r-xl hover:bg-gray-800 transition flex justify-center items-center whitespace-nowrap"
         >
           S'abonner
         </button>
