@@ -25,13 +25,13 @@ const handleSubmit = async () => {
   >
     <!-- Left Side: Text and Countdown -->
     <div class="flex-1 lg:pl-20 flex flex-col items-start">
-      <img src="/logo-defi24h.svg" alt="Défi 24H" class="w-40 lg:w-56 mb-8 self-center" />
-      <div class="mt-12 mb-8 order-1 lg:order-2">
+      <img src="/logo-defi24h.svg" alt="Défi 24H" class="w-40 lg:w-56 lg:mb-8 self-center" />
+      <div class="mt-12 mb-10 lg:mb-8 order-1 lg:order-2">
         <h1 class="text-3xl lg:text-5xl font-bold text-primary-yellow">We are</h1>
         <h2 class="text-4xl lg:text-6xl font-bold text-primary-yellow">Coming Soon.</h2>
         <p class="text-xl lg:text-2xl font-bold mt-4">17 Janvier 2025</p>
       </div>
-      <CountdownTimer class="order-2 lg:order-1 mb-8 lg:mb-0"/>
+      <CountdownTimer class="order-2 lg:order-1 mb-10 lg:mb-0"/>
     </div>
 
     <!-- Right Side: Form -->
