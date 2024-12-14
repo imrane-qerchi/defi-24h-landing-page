@@ -37,19 +37,19 @@ setInterval(updateCountdown, 1000)
     style="-webkit-text-stroke: 4px white"
   >
     <div class="flex items-baseline">
-      <p class="text-9xl lg:text-[250px] font-bold">{{ days }}</p>
+      <p class="text-9xl lg:text-[248px] font-bold">{{ days }}</p>
       <span class="ml-2 text-5xl lg:text-7xl font-medium">j</span>
     </div>
     <div class="flex items-baseline">
-      <p class="text-9xl lg:text-[250px] font-bold">{{ hours }}</p>
+      <p class="text-9xl lg:text-[248px] font-bold">{{ hours }}</p>
       <span class="ml-2 text-5xl lg:text-7xl font-medium">h</span>
     </div>
     <div class="flex items-baseline">
-      <p class="text-9xl lg:text-[250px] font-bold">{{ minutes }}</p>
+      <p class="text-9xl lg:text-[248px] font-bold">{{ minutes }}</p>
       <span class="ml-2 text-5xl lg:text-7xl font-medium">m</span>
     </div>
     <div class="flex items-baseline">
-      <p class="text-9xl lg:text-[250px] font-bold">{{ seconds }}</p>
+      <p class="text-9xl lg:text-[248px] font-bold">{{ seconds }}</p>
       <span class="ml-2 text-5xl lg:text-7xl font-medium">s</span>
     </div>
   </div>
