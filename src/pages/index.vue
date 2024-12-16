@@ -31,9 +31,7 @@ const handleSubmit = async () => {
         <h2 class="text-4xl lg:text-6xl font-bold text-primary-yellow">Coming Soon.</h2>
         <p class="text-xl lg:text-2xl font-bold mt-4">17 Janvier 2025</p>
       </div>
-      <div class="flex justify-center items-center w-full order-2 lg:order-1 mb-10 lg:mb-0">
-        <CountdownTimer />
-      </div>
+      <CountdownTimer class="order-2 lg:order-1 mb-10 lg:mb-0 w-full max-w-screen-lg mx-auto" />
     </div>
 
     <!-- Right Side: Form -->
