@@ -26,31 +26,26 @@ const updateCountdown = () => {
   }
 }
 
-// Mise à jour initiale et intervalle pour mise à jour continue
+// Mise à jour initiale et intervalle
 updateCountdown()
 setInterval(updateCountdown, 1000)
+
+const countdownUnits = [
+  { label: 'j', value: days },
+  { label: 'h', value: hours },
+  { label: 'm', value: minutes },
+  { label: 's', value: seconds }
+]
 </script>
 
 <template>
   <div
-    class="flex flex-col lg:flex-row justify-center items-center space-y-4 lg:space-y-0 lg:space-x-4 text-transparent font-poppins opacity-50"
+    class="flex flex-col lg:flex-row justify-center items-center space-y-4 lg:space-y-0 lg:space-x-4 font-poppins text-transparent opacity-50"
     style="-webkit-text-stroke: 4px white"
   >
-    <div class="flex items-baseline">
-      <p class="text-9xl lg:text-[248px] font-bold">{{ days }}</p>
-      <span class="ml-2 text-5xl lg:text-7xl font-medium">j</span>
-    </div>
-    <div class="flex items-baseline">
-      <p class="text-9xl lg:text-[248px] font-bold">{{ hours }}</p>
-      <span class="ml-2 text-5xl lg:text-7xl font-medium">h</span>
-    </div>
-    <div class="flex items-baseline">
-      <p class="text-9xl lg:text-[248px] font-bold">{{ minutes }}</p>
-      <span class="ml-2 text-5xl lg:text-7xl font-medium">m</span>
-    </div>
-    <div class="flex items-baseline">
-      <p class="text-9xl lg:text-[248px] font-bold">{{ seconds }}</p>
-      <span class="ml-2 text-5xl lg:text-7xl font-medium">s</span>
+    <div v-for="(unit, index) in countdownUnits" :key="index" class="flex items-baseline">
+      <p class="text-6xl sm:text-8xl md:text-9xl lg:text-[200px] font-bold">{{ unit.value }}</p>
+      <span class="ml-2 text-4xl sm:text-5xl lg:text-6xl font-medium">{{ unit.label }}</span>
     </div>
   </div>
 </template>
